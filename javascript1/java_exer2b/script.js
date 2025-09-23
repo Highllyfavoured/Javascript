@@ -1,6 +1,6 @@
 function calOperation() {
-    let num1 = prompt("Enter the First Number") || 8;
-    let num2 = prompt("Enter the Second Number") || 3;
+    let num1 = prompt("Enter the First Number");
+    let num2 = prompt("Enter the Second Number");
 
     let addition = num1 + num2;
     let subtraction = num2 - num2;
