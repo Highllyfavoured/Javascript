@@ -109,10 +109,21 @@ let member = {
     borrowedBooks: ['Ada is good', 'Legend of the seeker', 'Lighthouse squad'],
 
     borrowBook: function() {
-        book = "I love You"
-       this.borrowedBooks.push(book)
-       return `added book ${book}. items in members ${member}`;
+    book = "I love You"
+    this.borrowedBooks.push(book)
+    return this.borrowedBooks;
+},
+    getBorrowedCount: function() {
+        return this.borrowedBooks.length
     },
-}
-    member.borrowBook()
+    getMembershipInfo: function() {
+        return this.membershipType
+    }
+};
+    
+// member.borrowBook()
+// member.borrowBook()
+console.log(member.getBorrowedCount())
+console.log(member.borrowBook())
+console.log(member.getMembershipInfo())
 
