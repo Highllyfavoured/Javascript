@@ -1,9 +1,12 @@
-shopping = ["Bread", "Milk", "Eggs", "Apples", "Rice"]
-console.log("Original Shopping List:", shopping)
+let shopping = ["Bread", "Milk", "Eggs", "Apples", "Rice"];
+console.log("Original Shopping List:", shopping);
+
 shopping.push("Beans");
 console.log("List after adding to the end:", shopping);
-shopping.shift()
+
+shopping.shift();
 console.log("List after removing first item:", shopping);
+
 console.log("Total number of items:", shopping.length)
 for(let l=0; l < shopping.length; l++) {
     console.log(`Shopping List ${l + 1}:, ${shopping[l]}`);
