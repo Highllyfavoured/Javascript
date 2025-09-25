@@ -62,30 +62,33 @@ function getGrade() {
             isRaining? "Bring an umbrella" : "No umbrella needed";
         }
 
-        function atm() {
-            let balance = Number(prompt("Enter your balance:"))
-            let action = prompt("Do you want to withdraw or deposit?")
-            let amount = prompt("Enter amount to withdraw or deposit:")
+        // function atm() {
+        //     let balance = Number(prompt("Enter your balance:"))
+        //     let action = prompt("Do you want to withdraw or deposit?")
+        //     let amount = prompt("Enter amount to withdraw or deposit:")
 
-                if (action === "withdraw") {
-                    if (amount > 500) {
-                    console.log(`Withdrawal limit exceeded. You can only withdraw up to 500 at once.`);
-                    }
-                    if (amount > balance) {
-                    console.log(`Insufficient funds. Your balance is ${balance}.`);
-                    }
-                    balance -= amount;
-                    console.log(`Withdrawal successful. New balance: ${balance}`);
-                    } 
-        
-            else if (action === "deposit") {
-                balance += amount;
-                console.log(`Deposit successful. New balance: ${balance}`);
-            } 
-            else {
-                console.log(`Invalid action. Please choose "withdraw" or "deposit"`);
-            }
-            }
+        //     if (action === "withdraw" && amount >= 500) {
+        //         console.log(`Withdrawal limit exceeded. You can only withdraw up to 500 at once.`);
+        //         console.log(`you can preceed`);
+        //         }
+        //         if (amount > balance) {
+        //             console.log(`Insufficient funds. Your balance is ${balance}.`);
+        //             }
+        //             balance -= amount;
+        //             console.log(`Withdrawal successful. New balance: ${balance}`);
+        //     }
+        // else if (action === "deposit" ) {
+        //         balance += amount;
+        //         console.log(`Deposit successful. New balance: ${balance}`);
+        //     } 
+        //     else {
+        //         console.log(`Invalid action. Please choose "withdraw" or "deposit"`);
+        //     }
+        // }
+    
+
+         
+                        
 
         function personalAssistant() {
             let hour = prompt("Enter time in hours");
@@ -112,10 +115,10 @@ function getGrade() {
                 } else {
                 message += "Try to relax after work. ";
                 }
-                } else if (dayType === "weekend") {
+            } else if (dayType === "weekend") {
                     message += "Enjoy your weekend! ";
                     message += weather === "sunny" ? "Perfect time for outdoor activities. " : "Maybe watch a movie indoors. ";
-                } else if (dayType === "holiday") {
+            } else if (dayType === "holiday") {
                     message += "Happy holiday! ";
                     message += (weather === "rainy" || weather === "cloudy") 
                     ? "Cozy up with a book or some tea. " 
@@ -123,7 +126,7 @@ function getGrade() {
                 }
 
                 
-                if (dayType === "workday" && (hour < 9 || hour > 17)) {
+            if (dayType === "workday" && (hour < 9 || hour > 17)) {
                     message += "Remember to maintain work-life balance.";
                 }
 
