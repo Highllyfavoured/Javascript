@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoured Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+   <div class="calculator" role="application" aria-label="Calculator">
+    <div class="display" aria-hidden="false">
+      <div id="history" class="history" aria-live="polite"></div>
+      <div id="result" class="result" aria-live="assertive">0</div>
+    </div>
+
+    <div class="buttons" role="group" aria-label="calculator buttons">
+      <!-- top row -->
+      <button class="btn-clear" data-action="clear" aria-label="clear">C</button>
+      <button data-value="(" aria-label="open parenthesis">(</button>
+      <button data-value=")" aria-label="close parenthesis">)</button>
+      <button class="btn-op" data-value="/" aria-label="divide">÷</button>
+
+      <!-- digits / ops -->
+      <button class="btn-digit" data-value="7">7</button>
+      <button class="btn-digit" data-value="8">8</button>
+      <button class="btn-digit" data-value="9">9</button>
+      <button class="btn-op" data-value="*" aria-label="multiply">×</button>
+
+      <button class="btn-digit" data-value="4">4</button>
+      <button class="btn-digit" data-value="5">5</button>
+      <button class="btn-digit" data-value="6">6</button>
+      <button class="btn-op" data-value="-" aria-label="subtract">−</button>
+
+      <button class="btn-digit" data-value="1">1</button>
+      <button class="btn-digit" data-value="2">2</button>
+      <button class="btn-digit" data-value="3">3</button>
+      <button class="btn-op" data-value="+" aria-label="add">+</button>
+
+      <!-- last row -->
+      <button class="btn-digit btn-wide" data-value="0" aria-label="zero">0</button>
+      <button class="btn-digit" data-value=".">.</button>
+      <button class="btn-equals" data-action="equals" aria-label="equals">=</button>
+
+      <!-- a small backspace button (outside grid flow visually but accessible) -->
+      <button data-action="backspace" aria-label="backspace" style="display:none">⌫</button>
+    </div>
+</div>
+</body>
+</html>
