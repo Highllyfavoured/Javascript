@@ -1,0 +1,194 @@
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  min-height: 100vh;
+  color: #1e3c72;
+  margin: 0;
+}
+
+.studentModalVisible {
+  display: none !important;
+}
+
+.header {
+  color: whitesmoke;
+  padding: 20px;
+  text-align: center;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.head img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+}
+
+.main {
+  background-color: whitesmoke;
+  border-radius: 12px;
+  margin: 20px;
+  padding-bottom: 10px;
+}
+
+.subHead {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 15px;
+}
+
+.add {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #2a5298;
+  width: 250px;
+}
+
+.performance-table {
+  margin-top: 12px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead td {
+  background: #1e3c72;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 20px;
+  color: gray;
+  display: none;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(27, 33, 39, 0.6);
+}
+
+.modal-box {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px;
+  color: #1e3c72;
+}
+
+.modal-box h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.field {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
+.modal-actions button {
+  /* background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  background: none;
+}
+
+.delete i {
+  color: red;
+  
+}
+
+.edit i {
+  color: #1e3c72;
+}
+
+/* Performance Color Styles */
+.perf.excellent {
+  /* background: #28a745; */
+  color: #28a745;
+  font-size: larger;
+  font-weight: bold;
+
+}
+
+.perf.good {
+  /* background: #ffc107; */
+  color: #ffc107;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.perf.average {
+  /* background: #fd7e14; */
+  color: #fd7e14;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.perf.poor {
+  /* background: #dc3545; */
+  color: #dc3545;
+  font-size: larger;
+  font-weight: bold;
+}
+
+mark {
+  background: #ffe66d;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .subHead {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .search-input {
+    width: 90%;
+  }
+  table td {
+    font-size: 14px;
+  }
+}

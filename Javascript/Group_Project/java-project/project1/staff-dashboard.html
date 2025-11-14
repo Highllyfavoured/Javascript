@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="dashboard-page">
+  <div class="gen">
+    <button id="dark">Dark Mode</button>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+    <h1>Staff Dashboard</h1>
+
+    <!-- Add Menu Form -->
+    <h3>Add Menu Item</h3>
+    <input type="text" id="itemName" placeholder="Item name">
+    <input type="number" id="itemPrice" placeholder="Price">
+    <input type="text" id="itemDesc" placeholder="Description">
+
+    <select id="itemCategory">
+      <option value="Drinks">Drinks</option>
+      <option value="Food">Food</option>
+      <option value="Desserts">Desserts</option>
+    </select>
+
+    <button onclick="addMenuItem()">Add Item</button>
+
+    <!-- Menu List -->
+    <h3>Menu Items</h3>
+    <div id="menuList"></div>
+  </div>
+</body>
+</html>

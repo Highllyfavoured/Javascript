@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <div class = "joke">
+        <p id="display"></p>
+    </div>
+    <button onclick="getJoke()">New Joke</button>
+    <script>
+        async function getJoke() {
+            // let joke = document.getElementById(`new`).value;
+       
+        try{
+            let response = await fetch('https://official-joke-api.appspot.com/random_joke');
+
+            let data = await response.json();
+            console.log(data)
+        } catch (error) {
+            console.log("Something went wrong:", error.message);
+        }
+       }
+       getJoke()  
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// Exercise One
+    function tellJoke() {
+        return new Promise((resolve) => {   
+            console.log("Are you excited already?");  
+
+            setTimeout(() => {
+                let joke = "Only in Nigeria: You ask someone for directions, they’ll say “just dey go small small, when you reach that big tree wey bend, ask again.” 🌳😂";
+            
+                resolve(joke)
+            }, 3000);
+        });
+    }
+
+    // Async/await way
+    tellJoke().then(jok =>  {
+            console.log("😂 Here’s a funny joke!", jok);
+        });
+    </script>
+</body>
+</html>

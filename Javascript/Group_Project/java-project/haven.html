@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Bookmarked App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", serif;
+    letter-spacing: -0.031rem;
+}
+
+.header-part-container{
+    width: 70%;
+    height: auto;
+    background-color: #efefef;
+    border-radius: 0.5rem;
+    border: 1px solid #e3e2e2;
+    margin: 6rem auto 1rem auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+}
+
+.general-container{
+    width: 70%;
+    height: auto;
+    background-color: #f9f9f9;
+    margin: 1rem auto;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    border: 1px solid #e3e2e2;
+}
+
+.header-part-container h3{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #494949;
+}
+
+.button-container{
+    width: fit-content;
+    height: auto;
+}
+
+.button-container button{
+    width: 100%;
+    height: auto;
+    background-color: #7d2eff;
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
+    padding: 0.85rem;
+}
+
+.button-container button:hover{
+    background-color: #6a30ca;
+    color: #f3f3f3;
+    transition: background-color 0.3s ease;
+}
+
+.bottom-part-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    column-gap: 0.5rem;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+}
+
+.research-card-container{
+    width: 25%;
+    height: auto;
+    padding: 1rem 1.5rem;
+    background-color: #efefef;
+    border-radius: 0.5rem;
+    border: 1px solid #e3e2;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: 0.5rem;
+    flex-grow: 1;
+}
+
+.link-and-icon-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #7d2eff;
+    padding: 0.5rem 0;
+}
+
+.link-and-icon-container a{
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #494949;
+}
+
+.link-and-icon-container a:hover{
+    color: #7d2eff;
+    transition: color 0.3s ease;
+}
+
+.link-and-icon-container i{
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fc5f5f;
+    cursor: pointer;
+}
+
+.link-and-icon-container i:hover{
+    color: #7d2eff;
+}
+
+.research-card-container p{
+    font-size: 0.8rem;
+    color: #494949;
+    font-weight: 500;
+    line-height: 1.2rem;
+    text-align: justify;
+}
+
+
+/* modal form section */
+.modal-section-container{
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+/* This makes the modal visible when using JS to manipulate it >>> */
+.modal-section-container-visible{
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+}
+
+.form-container-section{
+    width: 30%;
+    height: auto;
+    background-color: #f9f9f9;
+    /* border: 2px solid #d3d3d3; */
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: 0.5rem;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+}
+
+.close-modal-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+.close-modal-container i{
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fc5f5f;
+    cursor: pointer;
+}
+
+.close-modal-container i:hover{
+    color: #6a30ca;
+}
+
+.word-modal-container{
+    width: fit-content;
+    height: auto;
+    margin: 0.5rem auto;
+}
+
+.word-modal-container h3{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #494949;
+}
+
+form{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: 1rem;
+}
+
+.all-inputs-and-labels-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: 0.7rem;
+}
+
+.the-name-container, .the-link-container, .the-des-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: 0.3rem;
+}
+
+.the-name-container label, .the-link-container label, .the-des-container label{
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #565656;
+}
+
+.the-name-container input, .the-link-container input{
+    width: 100%;
+    height: auto;
+    border: 1px solid #e3e2e2;
+    outline: none;
+    background-color: #f0f0f0;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #494949;
+}
+
+input:focus{
+    border: 1.2px solid #6a30ca;
+    transition: all 0.5s ease;
+    background-color: #f5f3f3;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #494949;
+}
+
+.the-name-container input::placeholder, .the-link-container input::placeholder, .the-des-container textarea::placeholder{
+    font-size: 0.7rem;
+    color: #b9b9b9;
+    font-weight: 600;
+}
+
+.the-des-container textarea{
+    width: 100%;
+    height: 5rem;
+    border: 1px solid #e3e2e2;
+    outline: none;
+    background-color: #f0f0f0;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #494949;
+}
+
+textarea:focus{
+    border: 1.2px solid #6a30ca;
+    transition: all 0.5s ease;
+    background-color: #f5f3f3;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #494949;
+}
+
+form button{
+    width: 100%;
+    height: auto;
+    background-color: #7d2eff;
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+form button:hover{
+    background-color: #6a30ca;
+    color: #f3f3f3;
+}
+
+form button:focus{
+    border: 1.2px solid #494949;
+    transition: all 0.5s ease;
+}
+
+.name-error, .link-error, .desc-error{
+    font-size: 0.8rem;
+    color: #e21b1b;
+    font-weight: 500;
+    line-height: 1.2rem;
+}
+
+
+/* The delete card section */
+.delete-card-section{
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.delete-card-section-visible{
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+}
+
+.card-delete-container{
+    width: 35%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    row-gap: 2rem;
+    background-color: #efefef;
+    border-radius: 0.5rem;
+    border: 1px solid #e3e2e2;
+    padding: 2.5rem 3rem;
+}
+
+.prompts-container{
+    width: fit-content;
+    height: auto;
+}
+
+.prompts-container h3{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #565656;
+}
+
+.btns-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.8rem;
+}
+
+.yes-btn{
+    width: 50%;
+    height: auto;
+    background-color: #7d2eff;
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
+    color: white;
+    padding: 0.8rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.no-btn{
+    width: 50%;
+    height: auto;
+    background-color: #fc5f5f;
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
+    color: white;
+    padding: 0.8rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.no-btn:focus{
+    border: 1.5px solid #a11a1a;
+    transition: all 0.5s ease;
+}
+
+.yes-btn:focus{
+    border: 1.5px solid #a11a1a;
+    transition: all 0.5s ease;
+}
+
+.yes-btn:hover, .no-btn:hover{
+    background-color: #6a30ca;
+    color: #f3f3f3;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="header-part-container">
+        <h3>Welcome to Research Bank</h3>
+        <div class="button-container">
+            <button id="add-res-btn">Add Research Item</button>
+        </div>
+    </div>
+    <div class="general-container">
+        <div class="bottom-part-container" id="bottom-part-container">
+            <!-- <div class="research-card-container">
+                <div class="link-and-icon-container">
+                    <a href="#" target="_blank">Quantum Mechanics</a>
+                    <i class="fa-solid fa-trash-can"></i>
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </div>
+                <p>This website is for quantum physics researchers who wants to delve into computational physics and deeper quantum mechanics.</p>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- The modal section with it's background structure -->
+    <div id="modal-section" class="modal-section-container">
+        <div class="form-container-section">
+            <div class="close-modal-container">
+                <i class="fa-solid fa-circle-xmark" id="close-icon"></i>
+            </div>
+            <div class="word-modal-container">
+                <h3>Add Research Item</h3>
+            </div>
+            <form id="form">
+                <div class="all-inputs-and-labels-container">
+                    <div class="the-name-container">
+                        <label for="resource-name">Resource Name</label>
+                        <input type="text" id="resource-name" name="resource-name" placeholder="Quantum Physics">
+                        <div class="name-error" id="name-error"></div>
+                    </div>
+        
+                    <div class="the-link-container">
+                        <label for="resource-link">Resource Link</label>
+                        <input type="text" id="resource-link" name="resource-link" placeholder="https://quantumphysics.com">
+                        <div class="link-error" id="link-error"></div>
+                    </div>
+        
+                    <div class="the-des-container">
+                        <label for="description">Resource Description</label>
+                        <textarea name="item-description" id="description" placeholder="Enter Description here..."></textarea>
+                        <div class="desc-error" id="desc-error"></div>
+                    </div>
+                </div>
+    
+                <button type="submit">Add Item</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <!-- The delete prompts -->
+
+    <div class="delete-card-section" id="delete-card-section">
+        <div class="card-delete-container">
+            <div class="prompts-container">
+                <h3>Are you sure you want to delete?</h3>
+            </div>
+            <div class="btns-container">
+                <button class="yes-btn" id="yes-btn">Yes, Delete</button>
+                <button class="no-btn" id="no-btn">No, Go Back!</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let addResItemBtn = document.querySelector(`#add-res-btn`)
+let modalSection = document.querySelector(`#modal-section`)
+let formSection = document.querySelector(`#form`)
+let resNameInput = document.querySelector(`#resource-name`)
+let resLinkInput = document.querySelector(`#resource-link`)
+let descripInput = document.querySelector(`#description`)
+let closedIconModal = document.querySelector(`#close-icon`)
+let nameErr = document.querySelector(`#name-error`)
+let linkErr = document.querySelector(`#link-error`)
+let descErr = document.querySelector(`#desc-error`)
+let bottomSection = document.querySelector(`#bottom-part-container`)
+let deleteModalSection = document.querySelector(`#delete-card-section`)
+let deleteYesBtn = document.querySelector(`#yes-btn`)
+let deleteNoBtn = document.querySelector(`#no-btn`)
+
+
+
+addResItemBtn.addEventListener(`click`, modalCard)
+function modalCard(){
+    modalSection.classList.remove(`modal-section-container`)
+    modalSection.classList.add(`modal-section-container-visible`)
+    resNameInput.focus()
+}
+
+closedIconModal.addEventListener(`click`, closeTheModal)
+function closeTheModal(){
+    if(modalSection.classList.contains(`modal-section-container-visible`)){
+        modalSection.classList.remove(`modal-section-container-visible`)
+        modalSection.classList.add(`modal-section-container`)
+    }
+    formSection.reset()
+    // This helps to clear the error msg that was displayed after i press the close icon button.
+    nameErr.textContent = ``
+    linkErr.textContent = ``
+    descErr.textContent = ``
+}
+
+let researchResult = []
+
+formSection.addEventListener(`submit`, submitForm)
+function submitForm(event){
+    event.preventDefault()
+    let nameRES = resNameInput.value
+    let linkRES = resLinkInput.value
+    let descripRES = descripInput.value
+
+    const resourceObject = {
+        resNME : nameRES,
+        resLNK : linkRES,
+        resDES : descripRES
+    }
+
+    // This line of code helps to display error message when user is not entering anything in the input.
+    nameErr.textContent = ``
+    linkErr.textContent = ``
+    descErr.textContent = ``
+
+    if(!nameRES.trim()){
+        nameErr.textContent = `**Resource Name is required!`
+        resNameInput.focus()
+        return
+    }
+
+    if(!linkRES.trim()){
+        linkErr.textContent = `**Resource link is required!`
+        resLinkInput.focus()
+        return
+    }
+
+    if(!descripRES.trim()){
+        descErr.textContent = `**Resource Description is required!`
+        descripInput.focus()
+        return
+    }
+
+    researchResult.push(resourceObject)
+
+    localStorage.setItem(`savedResources`, JSON.stringify(researchResult))
+
+    formSection.reset()
+    closeTheModal()
+    fetchResourcesResult()
+}
+
+//  This line of code helps to remove the error msg as soon as the user starts typing.
+resNameInput.addEventListener(`input`, eraseErrorNameInput)
+function eraseErrorNameInput(){
+    nameErr.textContent = ``
+}
+
+resLinkInput.addEventListener(`input`, eraseErrLinkInput)
+function eraseErrLinkInput(){
+    linkErr.textContent = ``
+}
+
+descripInput.addEventListener(`input`, eraseErrDescInput)
+function eraseErrDescInput(){
+    descErr.textContent = ``
+}
+
+// i want to retreive data from the local storage.
+const fetchResourcesResult = ()=>{
+    if(localStorage.getItem(`savedResources`)){
+        researchResult = JSON.parse(localStorage.getItem(`savedResources`))
+    }
+    printResult()
+}
+fetchResourcesResult()
+
+// this variable is where i'd store the card i want to delete after i press the delete icon.
+let currentResearchLinkToDelete = null
+
+// i want to print the retreived data on the UI.
+function printResult(){
+    // this code will not allow repetition of what is in the database.
+    bottomSection.innerHTML = ``
+
+    // the loop starts from here >>
+    researchResult.forEach((item)=>{
+        let UIresname = item.resNME
+        let UIreslink = item.resLNK
+        let UIresdescription = item.resDES
+
+        // creating the whole card section on javascript, excluding the container housing them.
+        let researchCardContainerDiv = document.createElement(`div`)
+        researchCardContainerDiv.classList.add(`research-card-container`)
+
+        let linkAndIconContainerDiv = document.createElement(`div`)
+        linkAndIconContainerDiv.classList.add(`link-and-icon-container`)
+
+        let researchItemTitleAnchor = document.createElement(`a`)
+        researchItemTitleAnchor.setAttribute(`href`, `${UIreslink}`)
+        researchItemTitleAnchor.setAttribute(`target`, `_blank`)
+        researchItemTitleAnchor.textContent = UIresname
+
+        let deleteIcon = document.createElement(`i`)
+        deleteIcon.classList.add(`fa-solid`, `fa-trash-can`)
+        deleteIcon.addEventListener(`click`, ()=>{
+            currentResearchLinkToDelete = UIreslink
+            deleteModalSection.classList.remove(`delete-card-section`)
+            deleteModalSection.classList.add(`delete-card-section-visible`)
+            deleteNoBtn.focus()
+        })
+       
+        // let editIcon = document.createElement(`i`)
+        // editIcon.classList.add(`fa-solid`, `fa-pen-to-square`)
+
+        let descriptionResourceWords = document.createElement(`p`)
+        descriptionResourceWords.textContent = UIresdescription
+
+        // then, i would append.
+        linkAndIconContainerDiv.append(researchItemTitleAnchor, deleteIcon)
+        researchCardContainerDiv.append(linkAndIconContainerDiv, descriptionResourceWords)
+        bottomSection.append(researchCardContainerDiv)    
+    })
+}
+
+
+// delete the card.
+deleteYesBtn.addEventListener(`click`, deleteItem)
+function deleteItem(){
+    if(currentResearchLinkToDelete){
+        researchResult.forEach((item, index)=>{
+            if(item.resLNK === currentResearchLinkToDelete){
+                researchResult.splice(index, 1)
+            }
+        })
+    }
+
+    localStorage.setItem(`savedResources`, JSON.stringify(researchResult))
+    fetchResourcesResult()
+    returnNormal()
+}
+
+deleteNoBtn.addEventListener(`click`, returnNormal)
+function returnNormal(){
+    deleteModalSection.classList.remove(`delete-card-section-visible`)
+    deleteModalSection.classList.add(`delete-card-section`)
+}
+    </script>
+</body>
+</html>

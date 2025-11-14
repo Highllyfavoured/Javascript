@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 8</title>
+    <style>
+        #animals-container img {
+            height: 100%;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div id="gen-container">
+        <h2>Image gallery</h2>
+        <img id="animals-container" src="./image/32851.jpg" alt="animals">
+    
+        </div>
+    </div>
+        <button onclick="Pause">Pause</button>
+        <button onclick="Resume">Resume</button>
+    <script>
+        const images = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"];
+        let currentIndex = 0;
+        let intervalId;
+
+        function showImage(index) {
+        document.getElementById("animals-container").src = images[index];
+        }
+
+        function startSlideshow() {
+        intervalId = setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }, 3000);
+        }
+
+        function pauseSlideshow() {
+        clearInterval(intervalId);
+        }
+
+        function resumeSlideshow() {
+        startSlideshow();
+        }
+
+        // Start the slideshow on page load
+        window.onload = startSlideshow;
+    </script>
+</body>
+</html>

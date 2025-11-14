@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 1</title>
+</head>
+<body>
+    <script>
+        // Exercise One
+        let firstName = "Favour";
+        let lastName = "Olaosebikan";
+        let age = 22;
+        let schoolName = "FUNAAB";
+        let grade = "A";
+        let isGraduated = true;
+
+        let fullName = `${firstName} ${lastName}`;
+        let len = fullName.length;
+        let nextYearAge = age + 1
+        let eligible = age >=18 ? "eligible for graduation" : "not eligible"
+        console.log(`--- Student profile ---`)
+        console.log(`Name: ${fullName}`)
+        console.log(`Full Name Length: ${len} characters`)
+        console.log(`Age: ${age} (Next Year: ${nextYearAge})`)
+        console.log(`School: ${schoolName}`)
+        console.log(`Grade: ${grade}`)
+        console.log(`Graduated: ${isGraduated}`)
+        console.log(fullName.toUpperCase())
+        console.log(schoolName.toLowerCase())
+        console.log(grade.trim())
+        console.log(`Eligibility: ${eligible}`)
+
+        // Exercise Two
+        let num1 = Number(prompt("Enter first Number"));
+        let num2 = Number(prompt("Enter second Number"));
+        let average = (num1 + num2) / 2;
+        let isNum1Greater = num1 > num2;
+
+        console.log(`Addition: ${num1 + num2}`)
+        console.log(`Subtraction: ${num1 - num2}`)
+        console.log(`Multiplication: ${num1 * num2}`)
+        console.log(`Division: ${num1 / num2}`)
+        console.log(`Remainder: ${num1 % num2}`)
+        console.log(`Average: ${average}`)
+        console.log(`isNum1Greater?: ${isNum1Greater}`)
+        console.log(`Between ${num1} and ${num2}, the larger is ${num1}`)
+        
+    </script>
+</body>
+</html>

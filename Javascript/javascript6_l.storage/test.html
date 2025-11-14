@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        .light-mode {
+            --primary-color: white;
+            --secondary-color: black;
+        }
+
+        .dark-mode {
+            --primary-color: black;
+            --secondary-color: white; 
+        }
+        body {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>Creativity is all i know</h3>
+        <button id="light">Light Mode</button>
+        <button id="dark">Dark Mode</button>
+    </div>
+    <script>
+    //     // Your café menu
+    // let menuItems = [
+    //     { id: 1, name: "Coffee", price: 3.50 },
+    //     { id: 2, name: "Sandwich", price: 8.00 }
+    // ];
+
+    // // User adds a new item
+    // menuItems.push({ id: 3, name: "Tea", price: 2.50 });
+
+    // console.log("Menu items:", menuItems); // Shows 3 items
+
+    // Save data
+    localStorage.setItem('userName', 'Alice');
+    localStorage.setItem('userAge', '25');
+    localStorage.setItem('isLoggedIn', 'true');
+
+    // Get data
+    let name = localStorage.getItem('userName');
+    let age = localStorage.getItem('userAge');
+    let loggedIn = localStorage.getItem('isLoggedIn');
+
+    console.log("Retrieved data:");
+    console.log("Name:", name);     // "Alice"
+    console.log("Age:", age);       // "25" (note: always returns string)
+    console.log("Logged in:", loggedIn); // "true"
+
+    // Check if data exists
+    if (localStorage.getItem('userName') !== null) {
+        console.log("User name is saved");
+    } else {
+        console.log("No user name saved");
+    }
+
+    // Saving numbers
+    let price = 15.99;
+    localStorage.setItem('productPrice', price.toString());
+    // or simply: localStorage.setItem('productPrice', price)
+
+        // Loading numbers
+    let savedPrice = localStorage.getItem('productPrice');
+    if (savedPrice !== null) {
+    savedPrice = Number(savedPrice); // Convert string to number
+    console.log("Price:", savedPrice, typeof savedPrice);
+    }
+    console.log(""); // Empty line
+
+    // Saving booleans
+    let isActive = true;
+    localStorage.setItem('userActive', isActive.toString());
+
+    // Loading booleans
+    let savedActive = localStorage.getItem('userActive');
+    if (savedActive !== null) {
+        savedActive = savedActive === 'true'; // Convert string to boolean
+        console.log("Active:", savedActive, typeof savedActive);
+    }
+    console.log(""); // Empty line
+        // Helper functions for data conversion
+    function saveNumber(key, value) {
+        localStorage.setItem(key, value.toString());
+    }
+
+    function loadNumber(key, defaultValue = 0) {
+        let saved = localStorage.getItem(key);
+        return saved !== null ? Number(saved) : defaultValue;
+    }
+
+    function saveBoolean(key, value) {
+        localStorage.setItem(key, value.toString());
+    }
+
+    function loadBoolean(key, defaultValue = false) {
+        let saved = localStorage.getItem(key);
+        return saved !== null ? saved === 'true' : defaultValue;
+    }
+
+    // Test the helper functions
+    saveNumber('itemCount', 42);
+    saveBoolean('isPremium', true);
+
+    console.log("Item count:", loadNumber('itemCount'));
+    console.log("Is premium:", loadBoolean('isPremium'));
+    console.log("Non-existent number:", loadNumber('missing', 100));
+
+    // Array example
+    let favoriteColors = ["blue", "green", "red"];
+    console.log("Original array:", favoriteColors);
+
+    // Save array (convert to JSON string)
+    localStorage.setItem('colors', JSON.stringify(favoriteColors));
+
+    // Load array (convert back from JSON)
+    let loadedColors = localStorage.getItem('colors');
+    if (loadedColors !== null) {
+        loadedColors = JSON.parse(loadedColors);
+        console.log("Loaded array:", loadedColors);
+        console.log("First color:", loadedColors[0]);
+    }
+    console.log(""); // Empty line
+
+    // Object example
+let userProfile = {
+    name: "John Doe",
+    age: 30,
+    email: "john@example.com",
+    preferences: {
+        theme: "dark",
+        notifications: true
+    }
+};
+
+console.log("Original object:", userProfile);
+
+// Save object
+localStorage.setItem('profile', JSON.stringify(userProfile));
+
+// Load object
+let loadedProfile = localStorage.getItem('profile');
+if (loadedProfile !== null) {
+    loadedProfile = JSON.parse(loadedProfile);
+    console.log("Loaded object:", loadedProfile);
+    console.log("User name:", loadedProfile.name);
+    console.log("Theme preference:", loadedProfile.preferences.theme);
+}
+
+console.log(""); // Empty line
+
+// Array of objects example (like menu items)
+let menuItems = [
+    { id: 1, name: "Coffee", price: 3.50, category: "Drinks" },
+    { id: 2, name: "Sandwich", price: 8.00, category: "Food" },
+    { id: 3, name: "Cookie", price: 2.25, category: "Dessert" }
+];
+
+// Save menu
+localStorage.setItem('cafeMenu', JSON.stringify(menuItems));
+
+// Load menu
+let savedMenu = localStorage.getItem('cafeMenu');
+if (savedMenu !== null) {
+    let loadedMenu = JSON.parse(savedMenu);
+    console.log("Loaded menu items:");
+    for (let item of loadedMenu) {
+        console.log(`${item.name}: $${item.price} (${item.category})`);
+    }
+}
+// Light Mode
+const light = document.getElementById("light")
+   light.click = function() {
+    document.body.classList.toggle("light-mode")
+   }
+
+// Dark Mode
+const dark = document.getElementById("dark")
+   dark.click = function() {
+    document.body.classList.toggle("dark-mode")
+   }
+
+    </script>
+</body>
+</html>

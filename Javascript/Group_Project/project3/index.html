@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
+    <link href="./style.css">
+</head>
+<body>
+    <div class="gen-container">
+        <div class="login-container">
+          <div class="log0"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h2>Teacher Login</h2>
+          <p>Access your student grade management portal.</p>
+          <form>
+            <label for="username-input">Username</label> <br>
+            <input type="text" id="username-input" placeholder="Enter your username">
+            <br><br>
+            <label for="password">Password</label> <br>
+            <div class="password-field">
+                <input type="password" id="password" name="password">
+                <button type="button" onclick="togglePassword()"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </form>
+          
+        </div>
+    </div>
+</body>
+</html>

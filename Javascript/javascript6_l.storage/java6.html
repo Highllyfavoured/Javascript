@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript6 Local Storage</title>
+    <style> 
+        :root{
+            --background: white;
+            --text-color: black;
+        }
+        .darkMode {
+            --background: black;
+            --text-color: white;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>Persistent Note App</h2>
+        <button id="dark">dark</button>
+
+        <br><br>
+        <textarea id="note" placeholder="Type your note here.."></textarea><br>
+
+        <button id="saveBtn">Save Note</button>
+        <button id="loadBtn">Load Note</button>
+        <p id="timeStamp"></p>
+
+    </div>
+    <script>
+        (function getTheme() {
+            const darkMode = localStorage.getItem("darkMode")
+            if (darkMode === "enabled") {
+                document.body.classList.add("darkMode");
+            } else if(darkMode === "disabled") {
+                document.body.classList.remove("darkMode");
+            }
+        })()
+        const note = document.getElementById("note");
+        const timestamp = document.getElementById("timestamp");
+
+        // save note and timestamp
+        document.getElementById("saveBtn").addEventListener("click", () => {
+            const text = note.value;
+            const savedAt = new Date().toLocaleString();
+            localStorage.setItem("note", note);
+            localStorage.setItem("savedAt", savedAt);
+            timestamp.textContent = `Note saved at: ${savedAt}`;
+        });
+
+        document.getElementById("loadBtn").addEventListener("click", () => {
+            const textLoad = localStorage.getItem("note");
+            const savedAt = localStorage.getItem("savedAt");
+            timestamp.textContent = `last saved at: ${savedAt}`;
+        })
+        // function load() {
+        //     localStorage.getItem("note")
+        // }
+
+        const dark = document.getElementById("dark");
+
+        let darkMode = localStorage.getItem("darkMode") === 'enabled' ? true : false
+
+        dark.onclick = function () {
+            document.body.classList.toggle("darkMode");
+            darkMode = !darkMode
+            localStorage.setItem('darkMode', darkMode ? 'enabled' : 'disabled')
+        }
+    </script>
+</body>
+
+</html>

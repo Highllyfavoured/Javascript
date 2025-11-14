@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript7</title>
+</head>
+<body>
+    <script>
+        // Exercise One
+        class book {
+           constructor(title, author, year) {
+            this.title = title;
+            this.author = author;
+            this.year = year;
+            this.isBorrowed = false;
+           }
+            // get summary methods
+            getSummary() {
+                return `Book: ${this.title} by ${this.author} ${this.year} ${this.isBorrowed}`
+                return "Book: " + this.title + "by" + this.author + this.year
+            }
+            
+            // methods to borrow book
+            borrowBook() {
+                this.isBorrowed = true;
+                return `${this.title} has been borrowed`
+            }
+        }
+        let things = new book("Things fall Apart", "Chinua Achebe", 1958)
+        let sugar = new book("Sugar Girl", "Olaosebikan Favour", 2024)
+
+        console.log(things.getSummary())
+        console.log(sugar.getSummary())
+
+        console.log(sugar.borrowBook())
+
+    // Exercise Two
+    // Student Report Card
+
+    class Student {
+        constructor(name, age, grades) {
+            this.name = name;
+            this.age = age;
+            this.grades = grades;
+        }
+        
+        // methodes that calculate average grade
+        calculateAverage() {
+           let total = 0;
+            for (let grade of this.grades) {
+                total += grade;
+            }
+            return total / this.grades.length;
+        }
+
+        // methods to get details
+        getDetails() {
+            let average= this.calculateAverage() < 50 ? "❌ Failed" : "✅ Passed";
+
+            return `${this.name} is ${this.age} years old and scored an average of ${average}`
+            
+        }
+    }
+
+    let favour = new Student("Favour", 29, [90, 56, 78, 99])
+    console.log(favour.getDetails())
+    console.log(favour.calculateAverage())
+
+    // Exercise Three
+    // Vehicle inheritance
+
+    class Vehicle {
+        constructor(brand, model, year) {
+            this.brand = brand;
+            this.model = model;
+            this.year = year;
+        }
+
+        // method get info
+        getInfo () {
+            return `${this.brand} of model ${model} invented in year ${year}`
+        }
+
+        // method is Old
+        isOld() {
+            let old = this.year > 10? true : false;
+        }
+    }
+
+    class Car extends Vehicle {
+        constructor(brand, model, year, fuelType) {
+            super(brand, model, year);
+            this.fuelType = fuelType;
+        }
+        // Override parent method
+        getInfo () {
+        return `${this.brand}, model ${this.model} invented in year ${this.year} fuel type is ${this.fuelType}`
+        }
+    }
+
+    let toyota = new Car("Toyota", "Corolla", 2022, "Petrol");
+
+    console.log(toyota.getInfo());
+
+    // Exercise Four
+    // Shopping Cart
+
+    class Product {
+        constructor(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+    }
+    class Cart extends Product {
+        constructor(name, price, items) {
+            this.items = items;
+        }
+        // method to add product
+        addProduct(product, quantity) {
+            
+        }
+        // method to remove product name
+        removeProduct(productName) {
+
+        }
+        // method to get total
+        getTotal() {
+
+        }
+    }
+    </script>
+</body>
+</html>

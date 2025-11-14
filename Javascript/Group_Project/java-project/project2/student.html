@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FHOJ Library — Student View</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="left"><h1>FHOJ Library — Student</h1></div>
+      <div class="actions">
+        <button id="darkModeBtn" class="btn btn-light">🌙 Dark Mode</button>
+        <a href="login.html" class="btn btn-light">Librarian</a>
+      </div>
+    </header>
+
+    <div class="actions-row">
+      <div class="left">
+        <input id="studentSearch" class="search-input" placeholder="Search books by title, author or year" />
+      </div>
+      <div style="text-align:right;">
+        <button id="changeNameBtn" class="btn btn-light">Change name</button>
+      </div>
+    </div>
+
+    <section>
+      <h3>Available Books</h3>
+      <div id="availableGrid" class="grid"></div>
+    </section>
+
+    <section style="margin-top:18px;">
+      <h3>Your Borrowed Books</h3>
+      <div id="myBorrowedGrid" class="grid"></div>
+    </section>
+  </div>
+
+  <script src="student.js" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STUDENT PERFORMANCE TRACKER</title>
+  <script src="./script.js" defer></script>
+  <link rel="stylesheet" href="./style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  <header class="header">
+    <div class="head">
+      <img src="./images/HAFAMA Schools Emblem Design.png" alt="logo" />
+      <h1>HAFAMA SCHOOL</h1>
+    </div>
+    <p>Performance Tracker</p>
+  </header>
+
+  <div class="gen-container">
+    <div class="main">
+      <div class="subHead">
+        <button class="add" id="addStudentBtn">➕ Add Student</button>
+        <input
+          id="searchBox"
+          type="text"
+          class="search-input"
+          placeholder="Search by student's name..."
+        />
+      </div>
+
+      <section class="performance-table" id="performanceTable">
+        <table>
+          <thead>
+            <tr>
+              <td>Picture</td>
+              <td>Name</td>
+              <td>Class</td>
+              <td>Average Score</td>
+              <td>Performance Category</td>
+              <td>Actions</td>
+            </tr>
+          </thead>
+          <tbody id="studentsTableBody"></tbody>
+        </table>
+        <p id="emptyState" class="empty-state">No students found.</p>
+      </section>
+    </div>
+  </div>
+
+  <!-- Add / Edit Modal -->
+  <div id="studentModal" class="studentModalVisible modal">
+    <div class="modal-box">
+      <h3 id="modalTitle">Add Student</h3>
+      <form id="studentForm">
+        <div class="field">
+          <label>Student Image Link:</label>
+          <input type="text" id="image" placeholder="Enter image link" required />
+        </div>
+        <div class="field">
+          <label>Student Name:</label>
+          <input id="studentName" placeholder="Student Name" required />
+        </div>
+        <div class="field">
+          <label>Student Age:</label>
+          <input id="studentAge" type="number" placeholder="Student Age" required />
+        </div>
+        <div class="field">
+          <label>Student Class:</label>
+          <input id="studentClass" placeholder="Student Class" required />
+        </div>
+        <div class="field">
+          <label>Score 1:</label>
+          <input id="studentScore1" type="number" placeholder="Score 1" required />
+        </div>
+        <div class="field">
+          <label>Score 2:</label>
+          <input id="studentScore2" type="number" placeholder="Score 2" required />
+        </div>
+        <div class="field">
+          <label>Score 3:</label>
+          <input id="studentScore3" type="number" placeholder="Score 3" required />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn" id="cancelModalBtn">Cancel</button>
+          <button type="submit" class="btn btn-light" id="saveBookBtn">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

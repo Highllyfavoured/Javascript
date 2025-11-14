@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favour's To-Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1><i class="fa-regular fa-circle-check"></i>Favour's Task Manager</h1>
+        <p>Organize your day, accomplish your goals</p>
+    </div>
+    <main class="main-content">
+        Add New Task
+       <section class="addTask">
+        <form id="fieldForm">
+            <div class="field">
+                <label for="taskName">TASK NAME</label><br>
+                <input type="text" id= "taskName" placeholder="Enter task name...">
+            </div>
+            <div class="field">
+                <label for="priority">PRIORITY</label><br>
+                <select id="priority">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="dueDate">DUE DATE</label><br>
+                <input id="dueDate" type="date">
+            </div>
+                <button type="submit" id="formSubmit" class="formSubmit">➕ Add Task</button>
+        </form>
+       </section>
+
+       Filter Section
+       <section class="filterSection">
+        <h5>Filter Section</h5>
+        <button class="filterBtn">
+            <p>All Task <span class="allTask" id="allTask">0</span></p>
+        </button>
+        <button class="filterBtn">
+            <p>Pending<span class="pending" id="pending">0</span></p>
+        </button>
+        <button class="filterBtn">
+            <p>Completed<span class="Completed" id="completed">0</span></p>
+        </button>
+       </section>
+
+       Tasks List
+       <section class="taskList">
+        <ol id="orderList">
+        </ol>
+       </section>
+    </main>
+</body>
+</html>

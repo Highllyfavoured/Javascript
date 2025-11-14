@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher's Dashboard</title>
+    <link rel="stylesheet" href="./teacher.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="general-container">
+       <aside class="grid-sidebar">
+        <h3><i class="fa-solid fa-font-awesome"></i> EduGrade Pro</h3>
+        <ul>
+            <li><button><i class="fa-solid fa-house"></i> Dashboard Home</button></li>
+            <li><button><i class="fa-solid fa-users-line"></i> Students</button></li>
+            <li><button><i class="fa-regular fa-star"></i> Gradebook</button></li>
+            <li><button><i class="fa-solid fa-chart-simple"></i> Reports</button></li>
+            <li><button><i class="fa-solid fa-gear"></i> Settings</button></li>
+            <li><button><i class="fa-regular fa-circle-question"></i> Help</button></li>
+        </ul>
+        <div class="new">
+            <h5>Add New Student</h5>
+        </div>
+       </aside> 
+
+       <main class="flex-main">
+        <nav class="demo-nav">
+            <div class="nav-logo"><h1>Welcome, Ms. Favour!</h1></div>
+            <div class="nav-links">
+                <a href="#"><button>View All Students</button></a>
+                <a href="#"><button>Go to Gradebook</button></a>
+            </div>
+            <img src="./images/dr.fav.jpg">
+        </nav>
+        <h4>Dashboard Overview</h4>
+        <div class="flex-container justify-space-around">
+            <div class="flex-item">
+              <h6>Total Student</h6>
+              <h5><b>150</b></h5>  
+            </div>
+            <div class="flex-item">
+              <h6>Active Classes</h6>
+              <h5><b>3</b></h5>  
+            </div>
+            <div class="flex-item">
+              <h6>Average Grade</h6>
+              <h5><b>B</b></h5>  
+            </div>
+            <div class="flex-item">
+              <h6>Assignment</h6>
+              <h5><b>5</b></h5>  
+            </div>
+        </div>
+        <nav class="student-nav">
+            <div class="roster"><h3>Student Roster</h3></div>
+            <div class="nav-links">
+                <div class="search-box"> 
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Search students...">
+                </div>
+                <a href="#" class="all"><button>All</button></a>
+                <a href="#"  class="all"><button>SS1</button></a>
+                <a href="#" class="all"><button>SS2</button></a>
+                <a href="#" class="all"><button>SS3</button></a>
+            </div>
+        </nav>
+        <table>
+            <thead>
+                <tr>
+                    <th>STUDENT NAME</th>
+                    <th>STUDENT ID</th>
+                    <th>CLASS</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Abolore Sanni</td>
+                    <td>S002</td>
+                    <td>SS1</td>
+                    <td><i class="fa-solid fa-eye"></i> <i class="fa-solid fa-pen"></i> <i class="fa-solid fa-trash-can delete-icon "></i></td>
+                </tr>
+                <tr>
+                    <td>Janet Bamgbose</td>
+                    <td>S001</td>
+                    <td>SS1</td>
+                    <td><i class="fa-solid fa-eye"></i> <i class="fa-solid fa-pen"></i> <i class="fa-solid fa-trash-can delete-icon"></i></td>
+                </tr>
+                <tr>
+                    <td>Haven Ayobamidele</td>
+                    <td>S003</td>
+                    <td>SS2</td>
+                    <td><i class="fa-solid fa-eye"></i> <i class="fa-solid fa-pen"></i> <i class="fa-solid fa-trash-can delete-icon "></i></td>
+                </tr>
+                <tr>
+                    <td>Favour Ayobami</td>
+                    <td>S004</td>
+                    <td>SS3</td>
+                    <td><i class="fa-solid fa-eye"></i> <i class="fa-solid fa-pen"></i> <i class="fa-solid fa-trash-can delete-icon"></i></td>
+                </tr>
+            </tbody>
+        </table>
+       </main>
+
+    </div>
+</body>
+</html>

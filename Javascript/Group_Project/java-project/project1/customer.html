@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Menu</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  
+</head>
+<bodydata-page="customer">
+    <!-- customer-menu -->
+    <div class="gen">
+        <button id="logoutBtn">Logout</button>
+
+        <div id="cartIcon"> <i class="fa-solid fa-cart-shopping"></i> <span id="cartCount">0</span></div>
+
+        <h1>FreshBite Café Menu</h1>
+
+         <!-- Search Bar -->
+        <input type="text" id="searchBar" placeholder="Search menu item..." onkeyup="searchMenu()">
+
+        <!-- Category Filters -->
+        <div id="filters">
+        <button class="active" onclick="filterMenu('All')">All</button>
+        <button onclick="filterMenu('Drinks')">Drinks</button>
+        <button onclick="filterMenu('Food')">Food</button>
+        <button onclick="filterMenu('Desserts')">Desserts</button>
+        </div>
+
+        <div id="menu"></div>
+        <div id="cart"></div>
+
+        <h3>Checkout</h3>
+        <input type="text" id="custName" placeholder="Your Name">
+        <input type="text" id="tableNo" placeholder="Table Number">
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+</body>
+</html>
